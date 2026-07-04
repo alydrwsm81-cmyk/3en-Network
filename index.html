@@ -2,15 +2,143 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>3en Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Rebr Network Pro</title>
     <style>
-        body { background-color: #070b19; color: white; text-align: center; font-family: sans-serif; padding-top: 100px; }
-        .btn { background-color: #2ed573; color: white; padding: 20px 40px; text-decoration: none; font-size: 20px; border-radius: 10px; font-weight: bold; }
+        /* --- الألوان المعتمدة من صورتك وبرنامجك --- */
+        :root {
+            --bg-main: #0b132b;    /* الأزرق الداكن من صورتك */
+            --bg-darker: #070b19;  /* الأزرق الأغمق للأطراف */
+            --green-main: #2ed573; /* الأخضر النيوني من برنامجك */
+            --green-hover: #26af5f;/* الأخضر الغامق عند الضغط */
+            --text-main: #ffffff;
+            --text-sec: #808e9b;
+            --mouse-glow: rgba(30, 58, 106, 0.75); /* نور الماوس النيوني والمحدد */
+        }
+
+        /* --- إعدادات الصفحة الأساسية وتأثير الماوس --- */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-darker);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; 
+            cursor: none; /* إخفاء الماوس الأصلي */
+        }
+
+        /* مؤشر ماوس مخصص وأنيق (النقطة البيضاء المضيئة) */
+        .custom-cursor {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 6px white, 0 0 12px white;
+        }
+
+        /* الحاوية الرئيسية المحمية بظل خفيف */
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            background-color: var(--bg-main);
+            padding: 50px 70px;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, white 0%, var(--green-main) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 14px;
+            color: var(--text-sec);
+            margin-top: 5px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        /* --- زر التحميل الجامد (3D / Pressed Animation) --- */
+        .btn-download {
+            background-color: var(--green-main);
+            color: white;
+            padding: 20px 60px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: all 0.2s ease-out;
+            box-shadow: 0 8px 0 #1e944b; /* بروز ثلاثي الأبعاد */
+            display: inline-block;
+            cursor: none;
+        }
+
+        /* أنميشن التحويم: ينزل تكة لتحت كأنك تبدأ تضغط عليه */
+        .btn-download:hover {
+            background-color: var(--green-hover);
+            transform: translateY(4px); 
+            box-shadow: 0 4px 0 #1e944b; 
+        }
+
+        /* عند الكبس الفعلي ينزل بالكامل ويختفي الظل */
+        .btn-download:active {
+            transform: translateY(8px); 
+            box-shadow: 0 0 0 #1e944b; 
+        }
+
+        .footer {
+            margin-top: 15px;
+            font-size: 10px;
+            color: #57606f;
+        }
     </style>
 </head>
 <body>
-    <h1>3EN NETWORK</h1>
-    <p>اضغط للتحميل:</p>
-    <a href="https://github.com/alydrwsm81-cmyk/3en-Network/releases/latest/download/3en_Network.exe" class="btn">DOWNLOAD 3EN NETWORK</a>
+
+    <div class="custom-cursor" id="cursor"></div>
+
+    <div class="container">
+        <h1>REBR NETWORK PRO</h1>
+        <p class="subtitle">Ultimate Advanced Network Controller</p>
+        
+        <a href="https://github.com/alydrwsm81-cmyk/Rebr-Network/releases/download/v1.0.0/roblox_killer.exe" class="btn-download" download>DOWNLOAD NOW 📥</a>
+        
+        <p class="footer">Press Button to Download Lag Switch</p>
+    </div>
+
+    <script>
+        const cursor = document.getElementById('cursor');
+
+        // كود التحكم بحركة الماوس والنور النيوني الصغير جداً والمكثف (5%) تحت المؤشر
+        document.addEventListener('mousemove', function(e) {
+            const x = e.clientX;
+            const y = e.clientY;
+            
+            // تحريك النقطة المضيئة المخصصة
+            cursor.style.left = x + 'px';
+            cursor.style.top = y + 'px';
+            
+            // هالة النور الصغيرة المركزة بنسبة 5% لمظهر نظيف وفخم
+            document.body.style.backgroundImage = `radial-gradient(circle at ${x}px ${y}px, var(--mouse-glow) 0%, transparent 5%)`;
+        });
+    </script>
+
 </body>
 </html>
